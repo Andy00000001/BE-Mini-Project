@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form site</title>
+		<script type="text/javascript">
+			function preventBack() {
+				window.history.forward(); 
+			}
+			  
+			setTimeout("preventBack()", 0);
+			  
+			window.onunload = function () { null };
+		</script>
+    </head>
+    <body bgcolor="skyblue"><br><br>
+        <form method="post" action = "http://localhost:5000/verification">
+            <table align="center">
+                <tr>
+                    <td>Enter OTP : </td>
+                    <td><input type="text" name="otp" placeholder="Enter OTP" required></td>
+                </tr>
+				</tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+		{% if error %}  
+        <p><strong>Error</strong>: {{error}}</p>  
+		{% endif %} 
+    </body>
+</html>
