@@ -50,7 +50,7 @@ def next_Response2():
         username = request.form.get("username")
         password = request.form.get("password")
 
-        my_database=mysql.connector.connect(host="localhost",user="root",password="")
+        my_database=mysql.connector.connect(host="localhost",user="",password="")
         my_cursor=my_database.cursor()
         
         my_cursor.execute("Use project")
@@ -139,7 +139,7 @@ def verification():
         otp = request.form.get("otp")
         if int(otp)==int(OTP):
             print(OTP,"Final success")
-            my_database=mysql.connector.connect(host="localhost",user="root",password="")
+            my_database=mysql.connector.connect(host="localhost",user="",password="")
             my_cursor=my_database.cursor()
             
             my_cursor.execute("Use project")
